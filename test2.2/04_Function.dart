@@ -4,3 +4,6 @@ int Fabonacci(int n){
 }
 
 var result = Fabonacci(20);
+void main(){
+  print('The result is $result');
+}
