@@ -90,19 +90,29 @@ class AbstractClass extends Describable {
 
 void main() {
   var voyager = Spacecraft('Voyager I', DateTime(1977, 9, 5));
+  print('####################');
   voyager.describe();
+  print('####################');
 
   var voyager3 = Spacecraft.unlaunched('Voyager III');
+  print('####################');
   voyager3.describe();
+  print('####################');
 
   var ptl = PilotedCraft('Voyager II', DateTime(1977, 8, 20));
+  print('####################');
   ptl.describe();
   ptl.describeCrew();
+  print('####################');
 
   var MockShip = MockSpaceship('Tiangong-1', DateTime(2011, 9, 29));
+  print('####################');
   MockShip.describe();
   MockShip.describeAnother();
+  print('####################');
 
   var Abstract = AbstractClass('Tiangong-2', DateTime(2016, 9, 15));
+  print('####################');
   Abstract.describeWithEmphasis();
+  print('####################');
 }
