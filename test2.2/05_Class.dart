@@ -21,8 +21,10 @@ class Orbiter extends Spacecraft{
   Orbiter(String name,DateTime launchDate,this.altitude):super(name,launchDate);
 }
 
-var voyager = Spacecraft('Voyager I',DateTime(1977,9,5));
-voyager.describe();
+void main(){
+  var voyager = Spacecraft('Voyager I',DateTime(1977,9,5));
+  voyager.describe();
 
-var voyager3 = Spacecraft.unlaunched('Voyager III');
-voyager3.describe();
+  var voyager3 = Spacecraft.unlaunched('Voyager III');
+  voyager3.describe();
+}

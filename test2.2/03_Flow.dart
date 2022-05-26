@@ -1,6 +1,4 @@
-import 'dart:async';
-import 'dart:io';
-import 'dart:math';
+
 void main(){
   var year=DateTime.now().year;
   if(year>=2001){
@@ -9,7 +7,7 @@ void main(){
     print('20th century');
   }
 
-  flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+  var flybyObjects = ['Jupiter', 'Saturn', 'Uranus', 'Neptune'];
   for(final object in flybyObjects){
     print(object);
   }
