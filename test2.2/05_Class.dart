@@ -1,4 +1,3 @@
-
 class Spacecraft {
   String name;
   DateTime? launchDate;
@@ -60,6 +59,34 @@ class MockSpaceship implements Spacecraft {
   }
 }
 
+abstract class Describable {
+  void describe();
+
+  void describeWithEmphasis() {
+    print('=========');
+    describe();
+    print('=========');
+  }
+}
+
+class AbstractClass extends Describable {
+  String name;
+  DateTime? launchDate;
+  int? get launchYear => launchDate?.year;
+  AbstractClass(this.name, this.launchDate);
+
+  //对Describable抽象类中describe()方法的实现
+  void describe() {
+    print('Spacecraft:$name');
+    var launchDate = this.launchDate;
+    if (launchDate != null) {
+      int years = DateTime.now().difference(launchDate).inDays ~/ 365;
+      print('Launched:$launchYear($years years ago)');
+    } else {
+      print('Unlaunched');
+    }
+  }
+}
 
 void main() {
   var voyager = Spacecraft('Voyager I', DateTime(1977, 9, 5));
@@ -75,4 +102,7 @@ void main() {
   var MockShip = MockSpaceship('Tiangong-1', DateTime(2011, 9, 29));
   MockShip.describe();
   MockShip.describeAnother();
+
+  var Abstract = AbstractClass('Tiangong-2', DateTime(2016, 9, 15));
+  Abstract.describeWithEmphasis();
 }
