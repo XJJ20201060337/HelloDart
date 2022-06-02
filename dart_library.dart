@@ -25,10 +25,27 @@ void dartcore() {
 
 //toStringAsFixed能够指定小数点后保留的小数位数；
   assert(123.456.toStringAsFixed(2) == '123.46');
-  
+
 //toStringAsPrecision指定字符串中有效数字的位数
   assert(123.456.toStringAsPrecision(2) == '1.2e+2');
   assert(double.parse('1.2e+2') == 120.0);
+
+//检查某个字符串是否包含另一个字符串
+  assert('Never odd or even'.contains('odd'));
+
+//检查某一字符串是否是另一字符串的开头
+  assert('Never odd or even'.startsWith('Never'));
+
+//检查某一字符串是否是另一字符串的结尾
+  assert('Never odd or even'.endsWith('even'));
+
+//查找子串在字符串中的位置
+  assert('Never odd or even'.indexOf('odd') == 6);
+
+  assert('Never odd or even'.substring(6, 9) == 'odd');
+  var parts = 'progressive web apps'.split('');
+  assert(parts.length == 3);
+  assert(part[0] == 'progressive');
 }
 
 void main() {
