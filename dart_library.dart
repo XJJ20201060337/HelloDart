@@ -124,8 +124,65 @@ void dartcore() {
 
   print('\n');
   print('*' * 40);
+  print('获取字符串中的所有 UTF-16 代码单元');
   var codeUnitList = 'Never odd or even'.codeUnits.toList();
   print(codeUnitList[0]);
+  var example_02 = 'airplane'.codeUnits.toList();
+  for (final char in example_02) {
+    print(char);
+  }
+  print('*' * 40);
+
+  print('\n');
+  print('*' * 40);
+  print('字母大写转换');
+  assert('web apps'.toUpperCase() == 'WEB APPS');
+  print('aircraft'.toUpperCase());
+  assert('WEB APPS'.toLowerCase() == 'web apps');
+  print('AIRCRAFT'.toLowerCase());
+  print('*' * 40);
+
+  print('\n');
+  print('*' * 40);
+  print('Trimming和空字符串');
+  print('使用 trim() 移除首尾空格。使用 isEmpty 检查一个字符串是否为空(长度为0)，使用isNotEmpty检查字符串是否不为空');
+  var example_03 = '   hello_dart   '.trim();
+  var example_04 = ''.isEmpty;
+  var example_05 = '   '.isNotEmpty;
+  print('"   hello_dart   ".trim()==$example_03');
+  if (example_04) {
+    print('字符串""为空');
+  } else {
+    print('字符串""不为空');
+  }
+  if (!example_05) {
+    print('字符串"    "为空');
+  } else {
+    print('字符串"    "不为空');
+  }
+  print('*' * 40);
+
+  print('\n');
+  print('*' * 40);
+  print('替换部分字符串');
+  var example_06_original = '翠果，打烂她的嘴';
+  var example_06_1 = example_06_original.replaceAll(RegExp('翠果'), '槿汐');
+  var example_06_2 = example_06_original.replaceAll(RegExp('翠果'), '宝娟');
+  print('原版字符串：$example_06_original');
+  print('替换后版本1：$example_06_1');
+  print('替换后版本2：$example_06_2');
+  print('*' * 40);
+
+  print('\n');
+  print('*' * 40);
+  print('构建一个字符串');
+  var sb = StringBuffer();
+  sb..write('Use a StringBuffer for');
+  sb..writeAll(['efficient', 'string', 'creation'], ' ');
+  sb..write('.');
+  var fullString = sb.toString();
+  print(fullString);
+  print('*' * 40);
 }
 
 void main() {
