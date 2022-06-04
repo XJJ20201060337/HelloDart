@@ -183,6 +183,41 @@ void dartcore() {
   var fullString = sb.toString();
   print(fullString);
   print('*' * 40);
+
+  print('\n');
+  print('*' * 40);
+  print('正则表达式');
+  var numbers = RegExp(r'\d+');
+  var allCharacters = 'llamas live fifteen to twenty years';
+  var someDigits = 'llamas live 15 to 20 years';
+  //contains()能够判断字符串内是否有目标格式的字串
+  print(allCharacters.contains(numbers));
+  print(someDigits.contains(numbers));
+  //replaceAll()能够将指定格式的字串统一替换
+  var exedOut = someDigits.replaceAll(numbers, 'xx');
+  print(exedOut);
+  numbers.hasMatch(someDigits);
+  for (final match in numbers.allMatches(someDigits)) {
+    print(match.group(0)); // 15, then 20
+  }
+  print('*' * 40);
+
+  print('\n');
+  print('*' * 40);
+  print('Lists');
+  var grains = <String>[];
+  if (grains.isEmpty) {
+    print('列表grains为空');
+  } else {
+    print('列表grains不为空');
+  }
+  var fruits = ['apples', 'oranges'];
+  print('第一版:$fruits');
+  fruits.add('kiwis');
+  print('add的使用:$fruits');
+  fruits.addAll(['grapes', 'bananas']);
+  print('addAll的使用:$fruits');
+  print('列表fruits的长度为'fruits.length);
 }
 
 void main() {
