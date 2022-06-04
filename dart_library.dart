@@ -218,6 +218,7 @@ void dartcore() {
   fruits.addAll(['grapes', 'bananas']);
   print('addAll的使用:$fruits');
   print('列表fruits的长度为'fruits.length);
+  
 }
 
 void main() {
