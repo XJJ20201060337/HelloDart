@@ -213,12 +213,59 @@ void dartcore() {
   }
   var fruits = ['apples', 'oranges'];
   print('第一版:$fruits');
+  //使用add在集合里添加元素
   fruits.add('kiwis');
   print('add的使用:$fruits');
+  //使用addAll添加多个元素
   fruits.addAll(['grapes', 'bananas']);
   print('addAll的使用:$fruits');
-  print('列表fruits的长度为'fruits.length);
-  
+  //使用.length获得列表长度
+  var length = fruits.length;
+  print('列表fruits的长度为$length');
+  //移除单个项目
+  var appleIndex = fruits.indexOf('apples');
+  fruits.removeAt(appleIndex);
+  var appleLength = fruits.length;
+  print('列表fruits的长度为$appleLength');
+  //移除列表中所有元素
+  fruits.clear();
+  if (fruits.isEmpty)
+    print('列表为空');
+  else
+    print('列表不为空');
+  //利用另一个方法构造List
+  var vegetables = List.filled(99, 'broccoli');
+  vegetables.every((v) => v == 'broccoli');
+  //使用indexOf()查找一个对象在list中的下标值
+  var anotherFruits = ['bananas', 'apples', 'oranges'];
+  var location = anotherFruits.indexOf('apples');
+  print('apple在数组中的位置为$location');
+  anotherFruits.sort((a, b) => a.compareTo(b));
+  var locationNext = anotherFruits.indexOf('apples');
+  print('此时apple在列表中的位置为$locationNext');
+  print('*' * 40);
+
+  print('\n');
+  print('*' * 40);
+  print('Set');
+  //创建一个空的集合
+  var ingredients = <String>{};
+  //向集合当中添加元素
+  ingredients.addAll(['gold', 'titianium', 'xenon']);
+  var atomicNumbers = Set.from([79, 22, 54]);
+  //使用contains()或containsAll()检查一个或多个元素是否在集合当中
+  if (ingredients.contains('titanium'))
+    print('元素titanium存在于集合当中');
+  else
+    print('元素titanium不存在于集合当中');
+  if (ingredients.containsAll(['gold', 'iron']))
+    print('元素gold,iron存在于集合当中');
+  else
+    print('元素gold,iron不存在于集合当中');
+  var nobleGases = Set.from(['xenon', 'argon']);
+  var intersection = ingredients.intersection(nobleGases);
+  print(intersection);
+  print('*' * 40);
 }
 
 void main() {
