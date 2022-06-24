@@ -263,8 +263,58 @@ void dartcore() {
   else
     print('元素gold,iron不存在于集合当中');
   var nobleGases = Set.from(['xenon', 'argon']);
+  //创建两个集合的交集
   var intersection = ingredients.intersection(nobleGases);
   print(intersection);
+  print('*' * 40);
+
+  print('\n');
+  print('*' * 40);
+  print('Maps');
+  //声明一个Map类型
+  //Map通常使用字符串作为键值
+  var hawaiianBeaches = {
+    'Oahu':['Waikiki','Kailua','Waimanalo'],
+    'Big Island':['Wailea Bay','Pololu Beach'],
+    'Kauai':['Hanalei','Poipu']
+  };
+  //Maps能从构造函数生成映射
+  var seacherTerms = Map();
+  //Maps是一种参数化类型，你可以任意指定键值的类型
+  var nobleGases = Map<int,String>();
+  //通过大括号语法可以为map添加、获取、设置元素
+  //使用remove()方法可以从map中移除键值对
+  var nobleGases = {54:'xemon'};
+  print(nobleGases[54]);
+  print(nobleGases.containsKey(54));
+  nobleGases.remove(54);
+  if(!nobleGases.containsKey(54)){
+    print('nobleGases已被移除');
+  }
+  //检索map所有的key或者value
+  var keys = hawaiianBeaches.keys;
+  print(keys.length);
+  if(Set.from(keys).contains('Oahu')){
+    print('键集合keys包含元素“Oahu”');
+  }
+  else{
+    print('键集合keys不包含元素“Oahu”');
+  }
+  var values = hawaiianBeaches.values;
+  print(values.length);
+  //使用 containsKey() 方法检查一个 map 中是否包含某个key 
+  if(hawaiianBeaches.containsKey('Oahu')){
+    print('键集合keys包含元素“Oahu”');
+  }else{
+    print('键集合keys不包含元素“Oahu”');
+  }
+  if(!hawaiianBeaches.containsKey('Florida')){
+    print('键集合keys不包含元素“Florida”');
+  }else{
+    print('键集合keys包含元素“Florida”')
+  }
+  var teamAssignments = <String,String>{};
+  teamAssignments.putIfAbsent('Catcher', () => pickToughestKid());
   print('*' * 40);
 }
 
