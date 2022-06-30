@@ -352,7 +352,7 @@ void dartcore() {
     print('键集合keys包含元素“Florida”');
   }
   var teamAssignments = <String, String>{};
-  teamAssignments.putIfAbsent('Catcher', () => pickToughestKid());
+
   print('*' * 40);
 
   print('\n');
@@ -454,22 +454,6 @@ void dartmath(){
   print(ran3);
 }
 
-void dartconvert(){
-  print('\n');
-  print('*' * 40);
-  print('解编码JSON');
-  var jsonString = '''
-  [
-    {"score": 40},
-    {"score": 80}
-  ]
-''';
-
-var scores = jsonDecode(jsonString);
-var firstScore = scores[0];
-
-print('*' * 40);
-}
 void main() {
   dartcore();
 }
