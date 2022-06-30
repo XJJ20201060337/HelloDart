@@ -1,5 +1,8 @@
 import 'dart:core';
 import 'dart:async';
+import 'dart:math';
+import 'dart:convert';
+
 class Line implements Comparable<Line> {
   final int length;
   const Line(this.length);
@@ -422,14 +425,51 @@ void dartcore() {
   if (p1 == p2) print('p1与p2相同');
   if (p1 != p3) print('p1与p3不相同');
   print('*' * 40);
-
-  print('\n');
-  print('*' * 40);
-  print('异常');
-
-  print('*' * 40);
 }
 
+void dartmath(){
+  //三角函数
+  print(cos(pi));
+  var degrees = 30;
+  var radians = degrees*(pi/180);
+  var sinOf30degrees = sin(radians);
+  print(sinOf30degrees);
+
+  //最大值和最小值
+  print(max(1,1000));
+  print(min(1,-1000));
+  
+  //数学常数
+  print(e);
+  print(pi);
+  print(sqrt2);
+
+  //随机数
+  var random = Random();
+  var ran1 = random.nextDouble();
+  var ran2 = random.nextInt(10);
+  var ran3 =random.nextBool();
+  print(ran1);
+  print(ran2);
+  print(ran3);
+}
+
+void dartconvert(){
+  print('\n');
+  print('*' * 40);
+  print('解编码JSON');
+  var jsonString = '''
+  [
+    {"score": 40},
+    {"score": 80}
+  ]
+''';
+
+var scores = jsonDecode(jsonString);
+var firstScore = scores[0];
+
+print('*' * 40);
+}
 void main() {
   dartcore();
 }
