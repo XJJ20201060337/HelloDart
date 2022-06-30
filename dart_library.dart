@@ -427,18 +427,18 @@ void dartcore() {
   print('*' * 40);
 }
 
-void dartmath(){
+void dartmath() {
   //三角函数
   print(cos(pi));
   var degrees = 30;
-  var radians = degrees*(pi/180);
+  var radians = degrees * (pi / 180);
   var sinOf30degrees = sin(radians);
   print(sinOf30degrees);
 
   //最大值和最小值
-  print(max(1,1000));
-  print(min(1,-1000));
-  
+  print(max(1, 1000));
+  print(min(1, -1000));
+
   //数学常数
   print(e);
   print(pi);
@@ -448,7 +448,7 @@ void dartmath(){
   var random = Random();
   var ran1 = random.nextDouble();
   var ran2 = random.nextInt(10);
-  var ran3 =random.nextBool();
+  var ran3 = random.nextBool();
   print(ran1);
   print(ran2);
   print(ran3);
@@ -456,4 +456,5 @@ void dartmath(){
 
 void main() {
   dartcore();
+  dartmath();
 }
